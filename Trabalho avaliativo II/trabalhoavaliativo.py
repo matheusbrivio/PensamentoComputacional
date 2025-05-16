@@ -34,19 +34,19 @@ while opcao != 6:
         if len(pendentes) > 0:
             print("As tarefas pendentes são:")
             for i in range (len(pendentes)):
-                print("Tarefa", i + 1,pendentes[i], "pendente!")
+                print("Tarefa -", i + 1, "-", pendentes[i], "- pendente!")
         else:
             print("Voce não tem tarefas pendentes.")
         if len(concluidas) > 0:
             print("As tarefas concluidas são:")
             for i in range (len(concluidas)):
-                print("Tarefa", i + 1,concluidas[i], "concluida!")
+                print("Tarefa -", i + 1, "-", concluidas[i], "- concluida!")
         else:
             print("Voce não tem tarefas concluidas.")
     elif opcao == 3:
         if len(pendentes) > 0:
             for i in range (len(pendentes)):
-                print("Tarefa", i + 1,pendentes[i])
+                print("Tarefa -", i + 1,pendentes[i])
             indice = int(input("Digite o numero da atividade concluida:"))
             while indice <= 0 or indice > len(pendentes):
                 print("Digite um numero de um item que esteja na lista!")
@@ -61,7 +61,7 @@ while opcao != 6:
     elif opcao == 4:
         if len(pendentes) > 0:
             for i in range (len(pendentes)):
-                print("Tarefa", i + 1,pendentes[i])
+                print("Tarefa -", i + 1,pendentes[i])
             indice = int(input("Qual tarefa deseja alterar?:"))
             while indice <= 0 or indice > len(pendentes):
                 print("Digite um numero de um item que esteja na lista!")
@@ -84,5 +84,7 @@ while opcao != 6:
             print("A tarefa:", tarefaexcluida, "foi excluida com sucesso!")
     elif opcao == 6:
         print("Voce saiu...")
+
+
 
     
