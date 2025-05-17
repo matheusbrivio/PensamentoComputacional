@@ -70,7 +70,8 @@ while opcao != 6:
             tarefanova = input("Digite a tarefa nova para ser editada:")
             pendentes[indice - 1] = tarefanova
             print("Tarefa:", tarefaantiga, "editada para:", tarefanova, "com sucesso!")
-
+        else:
+            print("Voce não tem tarefas para editar!")
     elif opcao == 5:
         if len(pendentes) > 0:
             for i in range (len(pendentes)):
@@ -82,8 +83,14 @@ while opcao != 6:
             tarefaexcluida = pendentes[indice - 1]
             pendentes.pop(indice - 1)
             print("A tarefa:", tarefaexcluida, "foi excluida com sucesso!")
+        else:
+            print("Voce não tem tarefas para excluir!")
     elif opcao == 6:
         print("Voce saiu...")
+
+
+
+
 
 
 
