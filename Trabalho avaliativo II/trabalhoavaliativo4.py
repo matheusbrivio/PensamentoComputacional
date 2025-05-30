@@ -1,42 +1,43 @@
-def cadastrarparticipante(lista):
+def cadastrarparticipante(lista1, lista2):
     nome = input("Digite o nome do participante:")
     idade = int(input("Digite a idade do participante:"))
     if idade < 18:
-        participante = [nome, idade]
-        lista.append(participante)
+        lista1.append(nome)
+        lista2.append(idade)
     elif idade >= 18:
-        participante = [nome, idade, "18+"]
-        lista.append(participante)
+        lista1.append(nome)
+        lista2.append(idade, "18+")
     print("O participante:", nome,"foi adicionado com sucesso!")
     
-def mostrarparticipante(lista):
+def mostrarparticipante(lista, lista2):
     if len(lista) > 0:
         for i in range (len(lista)):
-            print ("Participante -", i + 1,":", lista[i])
+            print ("Participante -", i + 1,":", lista, lista2)
         return
     print("Voce nao tem participantes adicionados!")
 
-def removerparticipante(lista):
+def removerparticipante(lista, lista2):
     print(lista)
     nome = input("Digite o nome que deseja remover:")
     for i in range (len(lista)):
-        if nome == lista[i][0]:
+        if nome == lista[i]:
             lista.pop(i)
+            lista2.pop(i)
             return
     print("O nome nao está na lista!")
 
-def mostrarestatisticas(lista):
+def mostrarestatisticas(lista,lista2):
     if len(lista) > 0:
-        totalparticipantes = len(lista)
+        totalparticipantes = len(lista, lista2)
         somamediaidade = 0
-        for i in range (len(lista)):
-            somamediaidade += lista[i][1]
-            mediaidade = somamediaidade / len(lista)
+        for i in range (len(lista2)):
+            somamediaidade += lista2[i]
+            mediaidade = somamediaidade / len(lista2)
         print("A media de idade é:", mediaidade)
         for i in range (len(lista)):
             if i == 0:
-                maioridade = lista[i][1]
-            elif lista[i][1] > maioridade:
+                maioridade = lista2[i]
+            elif lista2[i] > maioridade:
                 maioridade = lista[i][1]
                 pessoamaisvelha = lista[i]
         print("A pessoa mais velha é:", pessoamaisvelha)
